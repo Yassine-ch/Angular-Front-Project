@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,13 +10,15 @@ import { ConsultationFormComponent } from './consultation/consultation-form.comp
 import { PatientComponent } from './patient/patient.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { RouterOutlet } from "@angular/router";
+import { RegisterComponent } from './patient/register/register.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         DoctorComponent,
         ConsultationFormComponent,
-        PatientComponent
+        PatientComponent,
+        RegisterComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
@@ -25,7 +27,8 @@ import { RouterOutlet } from "@angular/router";
         AppRoutingModule,
         HttpClientModule,
         ReactiveFormsModule,
-        RouterOutlet
+        FormsModule,
+        RouterOutlet,
     ]
 })
 export class AppModule { }
