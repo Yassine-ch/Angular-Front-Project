@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Doctor } from './doctor';
 import { DoctorService } from './doctor.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-doctor',
@@ -14,7 +15,7 @@ export class DoctorComponent implements OnInit {
     public liveDay: string = '';
 
 
-    constructor(private doctorService: DoctorService) { }
+    constructor(private doctorService: DoctorService,private router: Router) { }
 
     ngOnInit() {
         this.getDoctors();
@@ -66,4 +67,8 @@ export class DoctorComponent implements OnInit {
         const minutes = time.getMinutes().toString().padStart(2, '0');
         return `${hours}:${minutes}`;
     }
+    onTimeClick() {
+        this.router.navigate(['/questionnaire']);
+      }
+    
 }

@@ -11,6 +11,8 @@ import { PatientComponent } from './patient/patient.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { RouterOutlet } from "@angular/router";
 import { RegisterComponent } from './patient/register/register.component';
+import { QuestionnaireComponent } from './patient/questionnaire/questionnaire.component';
+import { PaymentComponent } from './patient/payment/payment.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +20,9 @@ import { RegisterComponent } from './patient/register/register.component';
         DoctorComponent,
         ConsultationFormComponent,
         PatientComponent,
-        RegisterComponent
+        RegisterComponent,
+        QuestionnaireComponent,
+        PaymentComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

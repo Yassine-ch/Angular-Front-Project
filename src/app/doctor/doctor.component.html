@@ -31,10 +31,20 @@
                                     <a href="#">{{doctor.email}}</a>
                                 </td>
                                 <td>
-                                    <ul class="consultation-times">
-										<li>{{ liveDay}}</li>
-                                        <li *ngFor="let time of consultationTimes"><button class="btn btn-primary">{{time}}</button></li>
-                                    </ul>
+                                    <div *ngFor="let time of consultationTimes; let i = index">
+                                        <!-- Start a new row for every even index -->
+                                        <div class="row mb-3" *ngIf="i % 2 === 0"> <!-- Added the mb-3 class here -->
+                                            <!-- Display the time for the current index -->
+                                            <div class="col-md-6">
+                                                <button class="btn btn-primary" (click)="onTimeClick()">{{consultationTimes[i]}}</button>
+                                            </div>
+                                            <!-- Display the time for the next index (if it exists) -->
+                                            <div class="col-md-6" *ngIf="consultationTimes[i + 1]">
+                                                <button class="btn btn-primary" (click)="onTimeClick()">{{consultationTimes[i + 1]}}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
                                 </td>
                                 <td style="width: 20%;">
                                     <a href="#" class="table-link">
